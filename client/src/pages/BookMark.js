@@ -377,8 +377,9 @@ export default function BookMark() {
 
             {/* 시작 - 페이지네이션 새로 추가 */}
             <PaginationWithArrow
-                // dataLength={bookmarkList.length} // 본래
-                dataLength={6} // 테스트용
+                dataLength={bookmarkList.length} // 본래
+                // dataLength={6} // 테스트용
+
                 itemsPerPage={8}
                 numberButtonClickHandler={setCurrentPage}
             />
