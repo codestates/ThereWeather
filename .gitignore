@@ -13,8 +13,8 @@ node_modules/
 /coverage
 
 # production
-/build
-/client/build
+# /build
+# /client/build
 
 
 # misc
