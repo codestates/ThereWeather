@@ -93,7 +93,6 @@ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 transition: all 0.3s ease 0s;
 cursor: pointer;
 outline: none;
-}
 
 &:hover {
     background-color: pink;

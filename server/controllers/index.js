@@ -1,7 +1,7 @@
 module.exports = {
     auth: require("./get/auth"),
     bookmark: require("./post/bookmark"),
-    codi: require("./get/codi"),
+    // codi: require("./get/codi"),
     mypage: require("./get/mypage"),
     mypost: require("./get/mypost"),
     readpost: require("./get/readpost"),
@@ -13,7 +13,7 @@ module.exports = {
     post: require("./post/write"),
     password: require("./put/password"),
     edituserinfo: require("./put/edituserinfo"),
-    userphoto: require("./put/userphoto"),
+    // userphoto: require("./put/userphoto"),
     editpost: require("./put/editpost"),
     checkuser: require("./put/checkuser"),
     deletepost: require("./del/deletepost"),
