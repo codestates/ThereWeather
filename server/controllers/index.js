@@ -1,8 +1,4 @@
 module.exports = {
-<<<<<<< HEAD
-    // auth: require("./users/auth"),  
-  }  
-=======
     auth: require("./get/auth"),
     bookmark: require("./post/bookmark"),
     codi: require("./get/codi"),
@@ -29,4 +25,3 @@ module.exports = {
     postsController: require("./post"),
     chatsController: require("./chat"),
 }
->>>>>>> 44913424c771d5d303ad4e893f746bcb054b85e1

@@ -10,38 +10,6 @@ const app = express()
 // const controllers = require("./controllers")
 const multer = require("multer")
 const logger = require("morgan")
-<<<<<<< HEAD
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-// app.use(
-//   cors({
-//     origin: [url],
-//     credentials: true,
-//     methods: ["GET", "POST", "DELETE", "OPTIONS"],
-//     // exposedHeaders: ["Authorization", "Content-Disposition"],
-//   })
-// )
-app.use(logger("dev")) //서버요청 로그
-app.use(cookieParser())
-// app.use(express.static("public"))
-
-// const storage = multer.diskStorage({
-//   destination: "./public/img/",
-//   filename: function (req, file, cb) {
-//     cb(null, "imgfile" + Date.now() + path.extname(file.originalname))
-//   },
-// })
-// const upload = multer({
-//   storage: storage,
-//   limits: { fileSize: 20 * 1024 * 1024 },
-// })
-app.get("/", (req, res) => {
-  res.send("Hello World!!")
-})
-
-// app.get("/auth", controllers.auth)
-=======
 const userRouter = require("./routes/user")
 const postRouter = require("./routes/post")
 const { isAuthorized } = require("./controllers/tokenFunc/index")
@@ -112,7 +80,6 @@ app.put("/edituserinfo", controllers.edituserinfo) //마이페이지에서 본�
 app.put("/userphoto", controllers.userphoto) //프로필 사진 변경시 - MyPage.js
 app.put("/editpost", controllers.editpost) //예보글 수정시 - PostRead.js
 app.put("/checkuser", controllers.checkuser)
->>>>>>> 44913424c771d5d303ad4e893f746bcb054b85e1
 
 //delete
 app.delete("/deletepost", controllers.deletepost) //예보글 삭제 - PostRead.js
@@ -122,21 +89,11 @@ const HTTPS_PORT = process.env.HTTPS_PORT || 4000
 
 let server
 if (fs.existsSync("./key.pem") && fs.existsSync("./cert.pem")) {
-<<<<<<< HEAD
-  const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8")
-  const certificate = fs.readFileSync(__dirname + "/cert.pem", "utf8")
-  const credentials = { key: privateKey, cert: certificate }
-  server = https.createServer(credentials, app)
-  server.listen(HTTPS_PORT, () => console.log("https server runnning"))
-} else {
-  server = app.listen(HTTPS_PORT, () => console.log("http server runnning"))
-=======
     const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8")
     const certificate = fs.readFileSync(__dirname + "/cert.pem", "utf8")
     const credentials = { key: privateKey, cert: certificate }
     server = https.createServer(credentials, app)
     server.listen(HTTPS_PORT, () => console.log("https server runnning"))
->>>>>>> 44913424c771d5d303ad4e893f746bcb054b85e1
 }
 // else {
 server = http.createServer(app)

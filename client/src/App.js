@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-     <div>이곳을지우고 작성하세요</div>
-    </div>
-  );
-=======
 import React, { useEffect } from "react"
 import { Switch, Route, Redirect, useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
@@ -176,7 +166,6 @@ export default function App() {
             <MenuBar></MenuBar>
         </>
     )
->>>>>>> 44913424c771d5d303ad4e893f746bcb054b85e1
 }
 
 export default App;
