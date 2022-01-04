@@ -53,7 +53,7 @@ export default function Three({
               src="img/firstpage/mobile.png"
               alt="touching mobile phone"
               delay={delayFive}
-            />
+            />  
             <AnimatedImg
               src="img/firstpage/after_the_rain.png"
               alt="holding umbrella"
