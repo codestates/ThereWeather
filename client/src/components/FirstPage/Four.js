@@ -3,7 +3,7 @@ import { TitleAndContents, ContentsUnderTitle, AnimatedTitle } from "./Two"
 import { useHistory } from "react-router-dom"
 import { TwoPictures } from "./Three"
 import styled from "styled-components"
-
+    
 const Button = styled.button`
 // width: 140px;
 // height: 45px;
