@@ -194,63 +194,63 @@ const CurPage = styled.button`
 const Button1 = styled.button`
   margin: 5px;
   color: black;
-    &:hover {
-        margin: 5px;
-        color: red;
-    }
-`
+  &:hover {
+    margin: 5px;
+    color: red;
+  }
+`;
 
 let url = process.env.REACT_APP_LOCAL_URL;
 if (!url) url = "https://thereweather.space/api";
 
 export default function MyPost() {
-    const dispatch = useDispatch()
-    const history = useHistory()
-    const {
-        start,
-        end,
-        current,
-        isLogin,
-        userInfo,
-        postInfo,
-        readPostId,
-        curPage,
-    } = useSelector((state) => state.itemReducer)
-    const [listLength, setListLength] = useState([])
-    //배열의 총 길이만 담고있는 변수
-    const [currentPosts, setcurrentPosts] = useState([])
-    //현재 포스트를 모두 담고 있는 변수
-    //   const [curPage, setCurPage] = useState(1);
-    //현재 페이지
-    const [dividNum, setDividNum] = useState(6)
-    //한페이지에 보여줄 포스트의 개수
-    useEffect(() => {
-        axios({
-            url:
-                url +
-                `/mypost?searchID=${userInfo.user_id}&page=${curPage}&capa=${dividNum}`,
-            method: "get",
-            withCredentials: true,
-        }).then((res) => {
-            setListLength(res.data.length)
-            setcurrentPosts(res.data.data)
-            dispatch(userPosts(res.data))
-        })
-    }, [userInfo])
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const {
+    start,
+    end,
+    current,
+    isLogin,
+    userInfo,
+    postInfo,
+    readPostId,
+    curPage,
+  } = useSelector((state) => state.itemReducer);
+  const [listLength, setListLength] = useState([]);
+  //배열의 총 길이만 담고있는 변수
+  const [currentPosts, setcurrentPosts] = useState([]);
+  //현재 포스트를 모두 담고 있는 변수
+  //   const [curPage, setCurPage] = useState(1);
+  //현재 페이지
+  const [dividNum, setDividNum] = useState(6);
+  //한페이지에 보여줄 포스트의 개수
+  useEffect(() => {
+    axios({
+      url:
+        url +
+        `/mypost?searchID=${userInfo.user_id}&page=${curPage}&capa=${dividNum}`,
+      method: "get",
+      withCredentials: true,
+    }).then((res) => {
+      setListLength(res.data.length);
+      setcurrentPosts(res.data.data);
+      dispatch(userPosts(res.data));
+    });
+  }, [userInfo]);
 
-    useEffect(() => {
-        axios({
-            url:
-                url +
-                `/mypost?searchID=${userInfo.user_id}&page=${curPage}&capa=${dividNum}`,
-            method: "get",
-            withCredentials: true,
-        }).then((res) => {
-            setListLength(res.data.length)
-            setcurrentPosts(res.data.data)
-            dispatch(userPosts(res.data))
-        })
-    }, [curPage])
+  useEffect(() => {
+    axios({
+      url:
+        url +
+        `/mypost?searchID=${userInfo.user_id}&page=${curPage}&capa=${dividNum}`,
+      method: "get",
+      withCredentials: true,
+    }).then((res) => {
+      setListLength(res.data.length);
+      setcurrentPosts(res.data.data);
+      dispatch(userPosts(res.data));
+    });
+  }, [curPage]);
 
   // // 페이지네이션 시작
   // const [currentPage, setCurrentPage] = useState(1)
@@ -273,21 +273,14 @@ export default function MyPost() {
   // 화면에 보여질 첫번째 페이지
   // 화면에 보여질 마지막 페이지
 
-    // 게시물사진 클릭했을 때
-    const postClickHandler = (e) => {
-        let elem = e.target
-        while (!elem.classList.contains("postItem")) {
-            elem = elem.parentNode
-            if (!elem.classList.contains("myPostList")) {
-                break
-            }
-        }
-
-        dispatch(updatePostId(elem.id))
-        history.push({
-            pathname: "/readpost",
-            state: { postId: elem.id },
-        })
+  // 게시물사진 클릭했을 때
+  const postClickHandler = (e) => {
+    let elem = e.target;
+    while (!elem.classList.contains("postItem")) {
+      elem = elem.parentNode;
+      if (!elem.classList.contains("myPostList")) {
+        break;
+      }
     }
 
     dispatch(updatePostId(elem.id));
