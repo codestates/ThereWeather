@@ -295,7 +295,6 @@ export default function MyPost() {
       pathname: "/readpost",
       state: { postId: elem.id },
     });
-  };
 
   return (
     <Outer className="MyPostPage">
